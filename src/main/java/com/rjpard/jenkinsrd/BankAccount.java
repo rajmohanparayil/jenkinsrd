@@ -2,19 +2,27 @@ package com.rjpard.jenkinsrd;
 
 public class BankAccount {
 
-  private double balance;
+	private double balance;
 
-  public BankAccount(double balance) {
-    this.balance = balance;
-  }
+	public double getBalance() {
+		return balance;
+	}
 
-  public double debit(double amount) {
-    if (balance < amount) {
-      amount = balance;
-    }
+	public void setBalance(double balance) {
+		this.balance = balance;
+	}
 
-    balance -= amount;
-    return amount;
-  }
+	public BankAccount(double balance) {
+		this.balance = balance;
+	}
+
+	public double debit(double amount) {
+		if (balance < amount) {
+			amount = balance;
+		}
+
+		balance -= amount;
+		return amount;
+	}
 
 }
